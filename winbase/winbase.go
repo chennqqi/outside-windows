@@ -6,12 +6,13 @@
 package winbase
 
 import (
+	"unsafe"
+
 	"github.com/tHinqa/outside"
-	. "github.com/tHinqa/outside/types"
 	T "github.com/tHinqa/outside-windows/types"
+	. "github.com/tHinqa/outside/types"
 	_ "github.com/tHinqa/outside/win32/advapi32"
 	_ "github.com/tHinqa/outside/win32/kernel32"
-	"unsafe"
 )
 
 //GetFreeSpace is obsolete; instead use:
@@ -1555,7 +1556,7 @@ var ( //TODO(t): Verify all
 		heap T.HANDLE, flags T.DWORD, mem *T.VOID, bytes T.SIZE_T) *T.VOID
 
 	HeapSetInformation func(
-		h, T.HANDLE,
+		h T.HANDLE,
 		ic T.HEAP_INFORMATION_CLASS,
 		info *T.VOID,
 		infoLength T.SIZE_T) T.BOOL

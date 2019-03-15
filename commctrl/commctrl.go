@@ -7,8 +7,8 @@ package commctrl
 
 import (
 	"github.com/tHinqa/outside"
-	. "github.com/tHinqa/outside/types"
 	T "github.com/tHinqa/outside-windows/types"
+	. "github.com/tHinqa/outside/types"
 	_ "github.com/tHinqa/outside/win32/comctl32"
 )
 
@@ -43,7 +43,7 @@ var (
 	ImageList_GetBkColor func(iml T.HIMAGELIST) T.COLORREF
 
 	ImageList_SetOverlayImage func(
-		iml T.HIMAGELIST, T.Image, Overlay int) T.BOOL
+		iml T.HIMAGELIST, iImage, Overlay int) T.BOOL
 
 	ImageList_Draw func(
 		iml T.HIMAGELIST, i int, dst T.HDC, x, y int, style T.UINT) T.BOOL
@@ -177,7 +177,7 @@ var (
 		buddy T.HWND,
 		upper, lower, pos int) T.HWND
 
-	DSA_Create func(item , itemGrow int) T.HDSA
+	DSA_Create func(item, itemGrow int) T.HDSA
 
 	DSA_Destroy func(dsa T.HDSA) T.BOOL
 

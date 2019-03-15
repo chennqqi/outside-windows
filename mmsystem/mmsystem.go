@@ -7,8 +7,8 @@ package mmsystem
 
 import (
 	"github.com/tHinqa/outside"
-	. "github.com/tHinqa/outside/types"
 	T "github.com/tHinqa/outside-windows/types"
+	. "github.com/tHinqa/outside/types"
 	_ "github.com/tHinqa/outside/win32/winmm"
 )
 
@@ -89,9 +89,9 @@ var (
 	WaveOutSetPitch func(wo T.HWAVEOUT, pitch T.DWORD) T.MMRESULT
 
 	WaveOutGetPlaybackRate func(
-		wo T.HWAVEOUT, rate  *T.DWORD) T.MMRESULT
+		wo T.HWAVEOUT, rate *T.DWORD) T.MMRESULT
 
-	WaveOutSetPlaybackRate func(wo T.HWAVEOUT, rate  T.DWORD) T.MMRESULT
+	WaveOutSetPlaybackRate func(wo T.HWAVEOUT, rate T.DWORD) T.MMRESULT
 
 	WaveOutGetID func(wo T.HWAVEOUT, devideID *T.UINT) T.MMRESULT
 
@@ -139,7 +139,7 @@ var (
 	WaveInGetID func(wi T.HWAVEIN, devideID *T.UINT) T.MMRESULT
 
 	WaveInMessage func(
-		wi T.HWAVEIN,  msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
+		wi T.HWAVEIN, msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
 
 	MidiOutGetNumDevs func() T.UINT
 
@@ -157,7 +157,7 @@ var (
 		ms T.HMIDISTRM, ropData *T.BYTE, property T.DWORD) T.MMRESULT
 
 	MidiStreamPosition func(
-		ms T.HMIDISTRM, mmt  *T.MMTIME, cMMT T.UINT) T.MMRESULT
+		ms T.HMIDISTRM, mmt *T.MMTIME, cMMT T.UINT) T.MMRESULT
 
 	MidiStreamOut func(
 		ms T.HMIDISTRM, mh *T.MIDIHDR, cMH T.UINT) T.MMRESULT
@@ -190,7 +190,7 @@ var (
 	MidiOutOpen func(
 		mo *T.HMIDIOUT,
 		deviceID T.UINT,
-		callback ,
+		callback,
 		instance T.DWORD_PTR,
 		fOpen T.DWORD) T.MMRESULT
 
@@ -202,7 +202,7 @@ var (
 	MidiOutUnprepareHeader func(
 		mo T.HMIDIOUT, mh *T.MIDIHDR, sMH T.UINT) T.MMRESULT
 
-	MidiOutShortMsg func(mo T.HMIDIOUT,  msg T.DWORD) T.MMRESULT
+	MidiOutShortMsg func(mo T.HMIDIOUT, msg T.DWORD) T.MMRESULT
 
 	MidiOutLongMsg func(
 		mo T.HMIDIOUT, mh *T.MIDIHDR, sMH T.UINT) T.MMRESULT
@@ -223,7 +223,7 @@ var (
 		deviceID *T.UINT) T.MMRESULT
 
 	MidiOutMessage func(
-		mo T.HMIDIOUT,  msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
+		mo T.HMIDIOUT, msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
 
 	MidiInGetNumDevs func() T.UINT
 
@@ -239,7 +239,7 @@ var (
 	MidiInOpen func(
 		mi *T.HMIDIIN,
 		deviceID T.UINT,
-		callback ,
+		callback,
 		instance T.DWORD_PTR,
 		fOpen T.DWORD) T.MMRESULT
 
@@ -263,7 +263,7 @@ var (
 	MidiInGetID func(mi T.HMIDIIN, devideID *T.UINT) T.MMRESULT
 
 	MidiInMessage func(
-		mi T.HMIDIIN,  msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
+		mi T.HMIDIIN, msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
 
 	AuxGetNumDevs func() T.UINT
 
@@ -278,7 +278,7 @@ var (
 	AuxGetVolume func(deviceID T.UINT, volume *T.DWORD) T.MMRESULT
 
 	AuxOutMessage func(
-		deviceID,  msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
+		deviceID, msg T.UINT, d1, d2 T.DWORD_PTR) T.MMRESULT
 
 	MixerGetNumDevs func() T.UINT
 
@@ -290,12 +290,12 @@ var (
 
 	MixerOpen func(
 		mx *T.HMIXER, mxId T.UINT,
-		callback , instance T.DWORD_PTR, fOpen T.DWORD) T.MMRESULT
+		callback, instance T.DWORD_PTR, fOpen T.DWORD) T.MMRESULT
 
 	MixerClose func(mx T.HMIXER) T.MMRESULT
 
 	MixerMessage func(
-		mx T.HMIXER,  msg T.UINT, param1, param2 T.DWORD_PTR) T.DWORD
+		mx T.HMIXER, msg T.UINT, param1, param2 T.DWORD_PTR) T.DWORD
 
 	MixerGetLineInfoA func(
 		mxobj T.HMIXEROBJ, ml **T.MIXERLINEA, fInfo T.DWORD) T.MMRESULT
@@ -357,7 +357,7 @@ var (
 	JoyReleaseCapture func(joyID T.UINT) T.MMRESULT
 
 	JoySetCapture func(
-		wnd T.HWND, T.JoyID, period T.UINT, fChanged T.BOOL) T.MMRESULT
+		wnd T.HWND, joyID, period T.UINT, fChanged T.BOOL) T.MMRESULT
 
 	JoySetThreshold func(joyID T.UINT, threshold T.UINT) T.MMRESULT
 
@@ -403,7 +403,7 @@ var (
 		mmio T.HMMIO, mmioinfo *T.MMIOINFO, fAdvance T.UINT) T.MMRESULT
 
 	MmioSendMessage func(
-		mmio T.HMMIO,  msg T.UINT, param1, param2 T.LPARAM) T.LRESULT
+		mmio T.HMMIO, msg T.UINT, param1, param2 T.LPARAM) T.LRESULT
 
 	MmioDescend func(
 		mmio T.HMMIO,

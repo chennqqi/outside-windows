@@ -19,6 +19,7 @@ import (
 	. "github.com/tHinqa/outside-windows/winnetwk"
 	. "github.com/tHinqa/outside-windows/winnls"
 	. "github.com/tHinqa/outside-windows/winreg"
+
 	// . "github.com/tHinqa/outside-windows/winsock"
 	. "github.com/tHinqa/outside-windows/winsock2"
 	. "github.com/tHinqa/outside-windows/winsvc"

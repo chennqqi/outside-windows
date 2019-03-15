@@ -7,8 +7,8 @@ package winuser
 
 import (
 	"github.com/tHinqa/outside"
-	. "github.com/tHinqa/outside/types"
 	T "github.com/tHinqa/outside-windows/types"
+	. "github.com/tHinqa/outside/types"
 	_ "github.com/tHinqa/outside/win32/user32"
 )
 
@@ -20,7 +20,7 @@ func CreateDialog(instance T.HINSTANCE, templateName VString, wndParent T.HWND, 
 	return CreateDialogParam(instance, templateName, wndParent, dialogFunc, 0)
 }
 
-func CreateDialogIndirect(instance T.HINSTANCE, template T.DLGTEMPLATE, wndParent T.HWND,dialogFunc T.DLGPROC) T.HWND {
+func CreateDialogIndirect(instance T.HINSTANCE, template T.DLGTEMPLATE, wndParent T.HWND, dialogFunc T.DLGPROC) T.HWND {
 	return CreateDialogIndirectParam(instance, template, wndParent, dialogFunc, 0)
 }
 
@@ -53,7 +53,7 @@ func GetWindowTask(Wnd T.HWND) T.HANDLE {
 func SetSysModalWindow(Wnd T.HWND) {}
 
 type (
-	va_list  T.Fake_type_Fix_me
+	va_list T.Fake_type_Fix_me
 )
 
 var (
@@ -204,8 +204,7 @@ var (
 
 	CopyIcon func(icon T.HICON) T.HICON
 
-	CopyImage func(
-		h T.HANDLE, typ T.UINT, T.X, y int, flags T.UINT) T.HANDLE
+	CopyImage func(h T.HANDLE, typ T.UINT, x, y int, flags T.UINT) T.HANDLE
 
 	CopyRect func(dst, src *T.RECT) T.BOOL
 
